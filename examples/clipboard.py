@@ -9,6 +9,7 @@ import asyncio
 
 import pyperclip
 from langchain_openai import ChatOpenAI
+from langchain_anthropic import ChatAnthropic
 
 from browser_use import Agent, Controller
 from browser_use.browser.browser import Browser, BrowserConfig
@@ -42,7 +43,7 @@ async def main():
 	task = (
 		f'Copy the text "Hello, world!" to the clipboard, then go to google.com and paste the text'
 	)
-	model = ChatOpenAI(model='gpt-4o')
+	model = ChatAnthropic(model='claude-3-5-sonnet-20240620')
 	agent = Agent(
 		task=task,
 		llm=model,
